@@ -1,0 +1,90 @@
+<div class="modal-body wrapper-lg">
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="musicAddForm" class="form-horizontal form-validation">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <strong>添加佛音</strong>
+                    </div>
+                    <div class="panel-body pb0">
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">名称：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.name" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">作者：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.author" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">资源链接：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.link" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">是否首页顶部推荐：</label>
+	                            <div class="col-sm-9">
+	                            	<input ng-model="music.isHomeTop" type="radio" ng-value="true">是&nbsp;&nbsp;
+									<input ng-model="music.isHomeTop" type="radio" ng-value="false" ng-checked="1">否
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">首页顶部推荐排序：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.homeTopSortNum" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">是否推荐：</label>
+	                            <div class="col-sm-9">
+	                            	<input ng-model="music.isRecommend" type="radio" ng-value="true">是&nbsp;&nbsp;
+									<input ng-model="music.isRecommend" type="radio" ng-value="false" ng-checked="1">否
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">排序：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.sortNum" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">所属类别：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.categoryId" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">播放次数：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.playTimes" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">音乐时长：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="music.duration" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+                    </div>
+                    <footer class="panel-footer text-right">
+                        <button ng-click="requestMusicAdd(musicAddForm.$valid);" type="submit" class="btn btn-success">保存</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

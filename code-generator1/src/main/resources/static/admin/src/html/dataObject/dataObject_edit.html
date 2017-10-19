@@ -1,0 +1,70 @@
+<div class="modal-body wrapper-lg">
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="dataObjectEditForm" class="form-horizontal form-validation">
+                <input type="hidden" ng-model="dataObject.id" />
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <strong>修改数据对象</strong>
+                    </div>
+                    <div class="panel-body pb0">
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">名称：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="dataObject.name" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">描述：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="dataObject.description" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">对应的项目ID：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="dataObject.projectId" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">数据管理类型：</label>
+	                            <div class="col-sm-9">
+									<select ng-model="dataObject.manageType" class="form-control">
+	                                    <option value="1">基本管理</option>
+	                                    <option value="2">自身树管理</option>
+	                                    <option value="3">基于其他树管理</option>
+	                                    <option value="4">基于其他列表管理</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">数据管理图标：</label>
+	                            <div class="col-sm-9">
+	                            	<select ng-model="dataObject.manageIcon" class="form-control">
+	                                    <option value="icon-notebook">icon-notebook</option>
+	                                    <option value="icon-user">icon-user</option>
+	                                    <option value="icon-picture">icon-picture</option>
+	                                    <option value="icon-playlist icon">icon-playlist icon</option>
+	                                    <option value="icon-music-tone-alt">icon-music-tone-alt</option>
+	                                    <option value="icon-book-open">icon-book-open</option>
+	                                    <option value="fa fa-pagelines">fa fa-pagelines</option>
+	                                    <option value="fa fa-leaf">fa fa-leaf</option>
+	                                    <option value="fa fa-life-saver">fa fa-life-saver</option>
+	                                    <option value="glyphicon glyphicon-tag icon">glyphicon glyphicon-tag icon</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+                    </div>
+                    <footer class="panel-footer text-right">
+                        <button ng-click="requestDataObjectEdit(dataObjectEditForm.$valid);" type="submit" class="btn btn-success">保存</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

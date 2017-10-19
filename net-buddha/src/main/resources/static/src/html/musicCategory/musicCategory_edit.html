@@ -1,0 +1,91 @@
+<div class="modal-body wrapper-lg">
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="musicCategoryEditForm" class="form-horizontal form-validation">
+                <input type="hidden" ng-model="musicCategory.id" />
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <strong>修改佛音类别</strong>
+                    </div>
+                    <div class="panel-body pb0">
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">名称：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.name" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">作者：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.author" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">描述：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.txtDescription" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">层级：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.level" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">是否首页顶部推荐：</label>
+	                            <div class="col-sm-9">
+	                            	<input ng-model="musicCategory.isHomeTop" type="radio" ng-value="true">是&nbsp;&nbsp;
+									<input ng-model="musicCategory.isHomeTop" type="radio" ng-value="false">否
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">首页顶部推荐排序：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.homeTopSortNum" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">是否推荐：</label>
+	                            <div class="col-sm-9">
+	                            	<input ng-model="musicCategory.isRecommend" type="radio" ng-value="true">是&nbsp;&nbsp;
+									<input ng-model="musicCategory.isRecommend" type="radio" ng-value="false">否
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">排序：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.sortNum" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">父级类别：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.parentId" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">播放次数：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="musicCategory.playTimes" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+                    </div>
+                    <footer class="panel-footer text-right">
+                        <button ng-click="requestMusicCategoryEdit(musicCategoryEditForm.$valid);" type="submit" class="btn btn-success">保存</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

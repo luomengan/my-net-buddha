@@ -1,0 +1,63 @@
+<div class="modal-body wrapper-lg">
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="dataColumnAddForm" class="form-horizontal form-validation">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <strong>添加数据列</strong>
+                    </div>
+                    <div class="panel-body pb0">
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">名称：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="dataColumn.name" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">描述：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="dataColumn.description" type="text"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">数据对象ID：</label>
+	                            <div class="col-sm-9">
+	                                <input ng-model="dataColumn.dataObjectId" type="number"  placeholder="" class="form-control" required />    
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+	                        <div class="form-group">
+	                            <label class="col-sm-3 control-label">类型：</label>
+	                            <div class="col-sm-9">
+	                                <select ng-model="dataColumn.type" class="form-control">
+	                                    <option value="1">字符</option>
+	                                    <option value="2">整数</option>
+	                                    <option value="3">长整数</option>
+	                                    <option value="4">双精度浮点数</option>
+	                                    <option value="5">布尔</option>
+	                                    <option value="6">日期</option>
+	                                    <option value="7">枚举</option>
+	                                    <option value="8">自身树</option>
+	                                </select>
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+							<div class="form-group">
+	                            <label class="col-sm-3 control-label">管理表格显示：</label>
+	                            <div class="col-sm-9">
+	                            	<input ng-model="dataColumn.isDisplayInTable" type="radio" ng-value="true" ng-checked="1">是&nbsp;&nbsp;
+									<input ng-model="dataColumn.isDisplayInTable" type="radio" ng-value="false">否
+	                            </div>
+	                        </div>
+	                        <div class="line line-dashed b-b pull-in"></div>
+                    </div>
+                    <footer class="panel-footer text-right">
+                        <button ng-click="requestDataColumnAdd(dataColumnAddForm.$valid);" type="submit" class="btn btn-success">保存</button>
+                    </footer>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

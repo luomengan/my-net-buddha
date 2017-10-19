@@ -1,0 +1,29 @@
+<div class="wrapper-md" ng-controller="musicCategoryAdminController">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+    <div class="panel panel-default mb0">
+        <div class="table-responsive">
+            <table id="musicCategoryAdminTable" 
+                ui-jq="dataTable" 
+                ui-options="{
+                    ajax: '/net-buddha/musicCategory/list'
+                }" 
+                ui-columns-attr="musicCategoryColumns" 
+                ui-btn-add-click="doMusicCategoryAdd();" 
+                ui-btn-edit-click="doMusicCategoryEdit();" 
+                ui-btn-remove-click="doMusicCategoryRemove();" 
+                class="table table-striped table-bordered m-b-none">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="musicCategory_add.html">
+        <div ng-include="'src/html/musicCategory/musicCategory_add.html'"></div>
+    </script>
+    <script type="text/ng-template" id="musicCategory_edit.html">
+        <div ng-include="'src/html/musicCategory/musicCategory_edit.html'"></div>
+    </script>
+</div>

@@ -1,0 +1,29 @@
+<div class="wrapper-md" ng-controller="dataObjectAdminController">
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+    <div class="panel panel-default mb0">
+        <div class="table-responsive">
+            <table id="dataObjectAdminTable" 
+                ui-jq="dataTable" 
+                ui-options="{
+                    ajax: '/code-generator1/dataObject/adminList'
+                }" 
+                ui-columns-attr="dataObjectColumns" 
+                ui-btn-add-click="doDataObjectAdd();" 
+                ui-btn-edit-click="doDataObjectEdit();" 
+                ui-btn-remove-click="doDataObjectRemove();" 
+                class="table table-striped table-bordered m-b-none">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="dataObject_add.html">
+        <div ng-include="'src/html/dataObject/dataObject_add.html'"></div>
+    </script>
+    <script type="text/ng-template" id="dataObject_edit.html">
+        <div ng-include="'src/html/dataObject/dataObject_edit.html'"></div>
+    </script>
+</div>

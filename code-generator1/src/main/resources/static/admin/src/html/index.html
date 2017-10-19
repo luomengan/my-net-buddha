@@ -1,0 +1,17 @@
+<div class="wrapper-md" ng-controller="indexController">
+	<div class="panel panel-default" style="padding: 15px;">
+		<div class="row">
+			<div class="col-md-6">
+				<form name="buildProjectForm" class="form-validation">
+					<label>构建项目</label>
+					<div class="input-group">
+						<input ng-model="project.id" type="number" class="form-control" placeholder="请输入项目ID" required>
+						<span class="input-group-btn">
+							<button ng-click="buildProject(buildProjectForm.$valid);" class="btn btn-info">构建</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+    </div>
+</div>

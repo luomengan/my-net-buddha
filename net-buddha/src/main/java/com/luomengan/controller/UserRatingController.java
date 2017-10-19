@@ -1,0 +1,93 @@
+package com.luomengan.controller;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.luomengan.entity.UserRating;
+import com.luomengan.pojo.DataResponse;
+import com.luomengan.pojo.Response;
+import com.luomengan.service.UserRatingService;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+/**
+ * 用户评分 Controller
+ * 
+ * @author luomengan
+ *
+ */
+@RestController
+@RequestMapping("/userRating")
+@Api(description = "用户评分接口列表")
+public class UserRatingController {
+
+	Logger logger = LoggerFactory.getLogger(getClass());
+
+	@Autowired
+	public UserRatingService userRatingService;
+
+	@GetMapping("/{id}")
+	@ApiOperation(value = "根据id获取用户评分", hidden = true)
+	public Response<UserRating> fetchById(@PathVariable Integer id) {
+		return new Response<>(userRatingService.getUserRatingInfo(id));
+	}
+
+	@GetMapping("/page")
+	@ApiOperation(value = "获取用户评分分页数据", hidden = true)
+	public Response<Page<UserRating>> userRatings(int page, int limit) {
+		return new Response<>((Page<UserRating>) userRatingService.userRatings(page, limit));
+	}
+
+	@GetMapping("/list")
+	@ApiOperation(value = "获取用户评分列表", hidden = true)
+	public Response<List<UserRating>> list() {
+		return new Response<>(userRatingService.list());
+	}
+
+	/******************************** 后台管理 **********************************/
+
+	@PostMapping("/")
+	@ApiOperation(value = "添加用户评分", hidden = true)
+	public Response<UserRating> addition(UserRating userRating) {
+		return new Response<>(userRatingService.addUserRating(userRating));
+	}
+
+	@PutMapping("/")
+	@ApiOperation(value = "修改用户评分", hidden = true)
+	public Response<UserRating> modification(UserRating userRating) {
+		return new Response<>(userRatingService.modifyUserRating(userRating));
+	}
+
+	@DeleteMapping("/{id}")
+	@ApiOperation(value = "删除用户评分", hidden = true)
+	public Response<Integer> delete(@PathVariable Integer id) {
+		userRatingService.deleteUserRating(id);
+		return new Response<Integer>(id);
+	}
+
+	@PostMapping("/deletes")
+	@ApiOperation(value = "批量删除用户评分（多个id以逗号分割）", hidden = true)
+	public Response<Boolean> deletes(String ids) {
+		userRatingService.deleteUserRatings(ids);
+		return new Response<Boolean>(true);
+	}
+
+	@GetMapping("/adminList")
+	@ApiOperation(value = "获取用户评分列表(后台管理)", hidden = true)
+	public DataResponse<List<UserRating>> adminList() {
+		return new DataResponse<>(userRatingService.list());
+	}
+
+}
