@@ -2,6 +2,7 @@ package com.luomengan.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,6 +35,7 @@ public class UserFavourite {
 	/**
 	 * 收藏资源ID
 	 */
+	@Column(name = "resource_id")
 	private Integer resourceId;
 	/**
 	 * 收藏类型

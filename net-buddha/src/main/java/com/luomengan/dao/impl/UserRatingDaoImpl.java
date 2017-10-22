@@ -5,11 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Repository;
 
 import com.luomengan.dao.UserRatingDao;
 import com.luomengan.dao.impl.jpa.UserRatingRepository;
 import com.luomengan.entity.UserRating;
+import com.luomengan.util.enums.RatingTypeEnum;
 
 /**
  * 用户评分 Dao实现
@@ -51,6 +54,12 @@ public class UserRatingDaoImpl implements UserRatingDao {
 	@Override
 	public List<UserRating> listUserRating() {
 		return userRatingRepository.findAll();
+	}
+
+	@Override
+	public List<UserRating> getUserUserRatingsByResourceId(Integer userId, RatingTypeEnum ratingType, Integer albumId) {
+		Sort sort = new Sort(new Sort.Order(Direction.DESC, "ratingTime"));
+		return userRatingRepository.findByUserIdAndRatingTypeAndResourceId(userId, ratingType, albumId, sort);
 	}
 
 }

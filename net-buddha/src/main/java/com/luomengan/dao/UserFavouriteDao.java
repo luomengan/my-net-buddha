@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.luomengan.entity.UserFavourite;
+import com.luomengan.util.enums.FavouriteTypeEnum;
 
 /**
  * 用户收藏 Dao
@@ -23,7 +24,12 @@ public interface UserFavouriteDao {
 	public UserFavourite retrieveUserFavouriteById(Integer id);
 
 	public Page<UserFavourite> pageUserFavourite(int page, int limit);
-	
+
 	public List<UserFavourite> listUserFavourite();
+
+	public List<Integer> findResourceIdsByUserIdAndFavouriteType(Integer userId, FavouriteTypeEnum favouriteType);
+
+	public List<UserFavourite> getUserFavouritesByResourceId(Integer userId, FavouriteTypeEnum musiccategory,
+			Integer albumId);
 
 }

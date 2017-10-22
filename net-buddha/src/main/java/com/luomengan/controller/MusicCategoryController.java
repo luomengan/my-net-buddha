@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.luomengan.entity.MusicCategory;
+import com.luomengan.entity.UserFavourite;
+import com.luomengan.entity.UserRating;
 import com.luomengan.pojo.DataResponse;
+import com.luomengan.pojo.MusicCategoryInfo;
 import com.luomengan.pojo.Response;
 import com.luomengan.security.SecurityUtil;
 import com.luomengan.service.MusicCategoryService;
@@ -65,9 +68,21 @@ public class MusicCategoryController {
 
 	@GetMapping("/pageAlbumByParentId")
 	@ApiOperation(value = "获取顶级类别ID获取专辑列表")
-	public Response<Page<MusicCategory>> pageAlbumByParentId(Integer parentId, Integer page, Integer limit) {
+	public Response<Page<MusicCategoryInfo>> pageAlbumByParentId(Integer parentId, Integer page, Integer limit) {
 		return new Response<>(
 				musicCategoryService.pageAlbumByParentId(SecurityUtil.getUserId(), parentId, page, limit));
+	}
+	
+	@PostMapping("/userFavourite")
+	@ApiOperation(value = "用户收藏专辑")
+	public Response<UserFavourite> userFavourite(Integer albumId) {
+		return new Response<>(musicCategoryService.userFavourite(SecurityUtil.getUserId(), albumId));
+	}
+	
+	@PostMapping("/userRating")
+	@ApiOperation(value = "用户评分专辑")
+	public Response<UserRating> userRating(Integer albumId, double rating) {
+		return new Response<>(musicCategoryService.userRating(SecurityUtil.getUserId(), albumId, rating));
 	}
 
 	/******************************** 后台管理 **********************************/

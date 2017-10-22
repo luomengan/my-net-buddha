@@ -61,6 +61,13 @@ public class MusicController {
 	public Response<Page<Music>> pageByAlbumId(Integer albumId, Integer page, Integer limit) {
 		return new Response<>(musicService.pageByAlbumId(albumId, page, limit));
 	}
+	
+	@PostMapping("/play")
+	@ApiOperation(value = "播放（用于增加播放次数）")
+	public Response<String> play(int musicId) {
+		musicService.play(musicId);
+		return new Response<>("播放成功");
+	}
 
 	/******************************** 后台管理 **********************************/
 

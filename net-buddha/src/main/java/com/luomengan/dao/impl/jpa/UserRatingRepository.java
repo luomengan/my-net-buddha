@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.Repository;
 
 import com.luomengan.entity.UserRating;
+import com.luomengan.util.enums.RatingTypeEnum;
 
 /**
  * 用户评分 Repository
@@ -25,5 +27,8 @@ public interface UserRatingRepository extends Repository<UserRating, Integer> {
 	List<UserRating> findAll();
 
 	UserRating findById(Integer id);
+
+	List<UserRating> findByUserIdAndRatingTypeAndResourceId(Integer userId, RatingTypeEnum ratingType, Integer albumId,
+			Sort sort);
 	
 }

@@ -13,9 +13,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum RatingTypeEnum implements CommonalityEnum {
 
-	Other(0, "其他"), 
-	
-	Music(1, "音乐");
+	Other(0, "其他"),
+
+	Music(1, "音乐"),
+
+	MusicCategory(2, "音乐专辑");
 
 	private Integer index;
 	private String type;

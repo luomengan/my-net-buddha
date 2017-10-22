@@ -53,20 +53,21 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 		// step 2 : 返回用户信息和token到客户端
 		Response<?> result = null;
 		if (customUserDetails.isAdmin()) {
-			EndUserWithToken user = new EndUserWithToken();
-			user.setToken(token);
-			user.setId(customUserDetails.getUserId());
-			user.setName(customUserDetails.getName());
-			user.setPhone(customUserDetails.getUsername());
-			result = new Response<EndUserWithToken>(user);
-		} else {
 			AdminUserWithToken user = new AdminUserWithToken();
 			user.setToken(token);
 			user.setId(customUserDetails.getUserId());
 			user.setName(customUserDetails.getName());
 			user.setUsername(customUserDetails.getUsername());
 			result = new Response<AdminUserWithToken>(user);
+		} else {
+			EndUserWithToken user = new EndUserWithToken();
+			user.setToken(token);
+			user.setId(customUserDetails.getUserId());
+			user.setName(customUserDetails.getName());
+			user.setPhone(customUserDetails.getUsername());
+			result = new Response<EndUserWithToken>(user);
 		}
+		res.setContentType("application/json;charset=utf-8");
 		res.setStatus(HttpServletResponse.SC_OK);
 		res.getWriter().println(JacksonUtil.encode(result));
 	}
@@ -76,7 +77,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 			AuthenticationException failed) throws IOException, ServletException {
 		response.setContentType("application/json;charset=utf-8");
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-		Response<String> result = new Response<>(ExceptionEnum.USERNAME_OR_PASSWORD_ERROR_EXCEPTION);
+		Response<String> result = new Response<>(ExceptionEnum.Username_Or_Password_Error_Exception);
 		response.getWriter().println(JacksonUtil.encode(result));
 	}
 }
