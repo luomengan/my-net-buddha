@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>许愿树</title>
+
+    <!-- Bootstrap -->
+    <link href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	
+	<script>
+	function RandomNumBoth(Min,Max){
+		var Range = Max - Min;
+		var Rand = Math.random();0
+		// 四舍五入
+		var num = Min + Math.round(Rand * Range);
+		return num;
+	}
+	var coordinateArr = [
+		{x: 173, y: 20},
+		{x: 98, y: 42},
+		{x: 140, y: 43},
+		{x: 141, y: 92},
+		{x: 137, y: 157},
+		{x: 91, y: 103},
+		{x: 40, y: 144},
+		{x: 221, y: 88},
+		{x: 230, y: 130},
+		{x: 52, y: 115},
+		{x: 216, y: 199},
+		{x: 64, y: 192},
+		{x: 103, y: 147}
+	];
+	var coordinateLength = coordinateArr.length;
+	
+	$(function(){
+		var width = $("#wishTree").width();
+		var height = $("#wishTree").height();
+		var offset = $("#wishTree").offset();
+		var x = offset.left;
+		var y = offset.top;
+		
+		$("#bagDiv").css("left", x);
+		$("#bagDiv").css("top", y);
+		$("#bagDiv").css("width", width);
+		$("#bagDiv").css("height", height);
+		
+		$("#wishBtn").on("click", function(){
+			var width = $("#wishTree").width();
+			var height = $("#wishTree").height();
+			
+			console.log("width:" + width);
+			console.log("height:" + height);
+			
+			console.log("x:" + x);
+			console.log("y:" + y);
+			
+			var curSize = $("#bagDiv span").length;
+			if(curSize == coordinateLength) {
+				alert("此树已挂满心愿，不能再挂");
+				return ;
+			}
+			
+			var span = $("<span>心愿" + (curSize + 1) + "</span>");
+			var coordinateIndex = RandomNumBoth(0, coordinateArr.length-1);
+			var coordinate = coordinateArr[coordinateIndex];
+			coordinateArr.splice(coordinateIndex, 1);
+			
+			span.css("color", "#F00");
+			span.css("position", "absolute");
+			span.css("top", coordinate.y);
+			span.css("left", coordinate.x);
+			$("#bagDiv").append(span);
+		});
+	});
+	</script>
+  </head>
+  <body class="container-fluid">
+	
+	<div class="row" style="padding-top: 40px;">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<img id="wishTree" src="img/wish_tree.png" width="100%" />
+		</div>
+		<div class="col-xs-1"></div>
+	</div>
+		
+	<div class="row" style="padding-top: 40px;">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-10">
+			<button id="wishBtn" type="button" class="btn btn-success">许愿</button>
+		</div>
+		<div class="col-xs-1"></div>
+	</div>
+	
+	<div id="bagDiv" style="position: absolute;"><div>
+    
+  </body>
+</html>
