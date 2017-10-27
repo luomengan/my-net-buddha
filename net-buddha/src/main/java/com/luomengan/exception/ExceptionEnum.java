@@ -12,8 +12,12 @@ public enum ExceptionEnum {
 
 	AlreadyRating_Exception("2003", "已评分，不能重复评分"),
 
+	UnsupportedPictureFormat_Exception("2004", "不支持的图片格式"),
+
 	// 用户
-	Username_Or_Password_Error_Exception("3001", "用户名或者密码错误");
+	UsernameOrPasswordError_Exception("3001", "用户名或者密码错误"),
+	
+	PhoneAlreadyRegister_Exception("3002", "手机号已被注册");
 
 	private ExceptionEnum(String code, String message) {
 		this.code = code;

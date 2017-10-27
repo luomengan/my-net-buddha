@@ -2,11 +2,15 @@ package com.luomengan.entity;
 
 import java.util.Date;
 
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.luomengan.awre.dbconvertor.GenderEnumConverter;
+import com.luomengan.util.enums.GenderEnum;
 
 /**
  * 
@@ -22,7 +26,7 @@ public class EndUser {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	/**
 	 * 姓名
 	 */
@@ -38,7 +42,8 @@ public class EndUser {
 	/**
 	 * 性别
 	 */
-	private Integer gender;
+	@Convert(converter = GenderEnumConverter.class)
+	private GenderEnum gender;
 	/**
 	 * 生日
 	 */
@@ -79,89 +84,89 @@ public class EndUser {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getPhone() {
 		return phone;
 	}
-	
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
+
 	public String getPassword() {
 		return password;
 	}
-	
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public Integer getGender() {
+
+	public GenderEnum getGender() {
 		return gender;
 	}
-	
-	public void setGender(Integer gender) {
+
+	public void setGender(GenderEnum gender) {
 		this.gender = gender;
 	}
-	
+
 	public String getBirthday() {
 		return birthday;
 	}
-	
+
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-	
+
 	public String getHeadPortraitLink() {
 		return headPortraitLink;
 	}
-	
+
 	public void setHeadPortraitLink(String headPortraitLink) {
 		this.headPortraitLink = headPortraitLink;
 	}
-	
+
 	public String getRegion() {
 		return region;
 	}
-	
+
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	
+
 	public Date getCreateTime() {
 		return createTime;
 	}
-	
+
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
-	
+
 	public Date getUpdateTime() {
 		return updateTime;
 	}
-	
+
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
-	
+
 	public Boolean getIsTest() {
 		return isTest;
 	}
-	
+
 	public void setIsTest(Boolean isTest) {
 		this.isTest = isTest;
 	}
-	
+
 	public Boolean getIsAnonymous() {
 		return isAnonymous;
 	}
-	
+
 	public void setIsAnonymous(Boolean isAnonymous) {
 		this.isAnonymous = isAnonymous;
 	}
-	
+
 }

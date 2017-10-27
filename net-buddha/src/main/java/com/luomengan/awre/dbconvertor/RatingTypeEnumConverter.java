@@ -1,4 +1,4 @@
-package com.luomengan.awre.convertor;
+package com.luomengan.awre.dbconvertor;
 
 import javax.persistence.AttributeConverter;
 

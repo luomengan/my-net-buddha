@@ -19,7 +19,6 @@ import com.luomengan.entity.UserFavourite;
 import com.luomengan.entity.UserRating;
 import com.luomengan.pojo.DataResponse;
 import com.luomengan.pojo.MusicCategoryInfo;
-import com.luomengan.pojo.Response;
 import com.luomengan.security.SecurityUtil;
 import com.luomengan.service.MusicCategoryService;
 
@@ -44,73 +43,73 @@ public class MusicCategoryController {
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "根据id获取佛音类别")
-	public Response<MusicCategory> fetchById(@PathVariable Integer id) {
-		return new Response<>(musicCategoryService.getMusicCategoryInfo(id));
+	public DataResponse<MusicCategory> fetchById(@PathVariable Integer id) {
+		return new DataResponse<>(musicCategoryService.getMusicCategoryInfo(id));
 	}
 
 	@GetMapping("/page")
 	@ApiOperation(value = "获取佛音类别分页数据", hidden = true)
-	public Response<Page<MusicCategory>> musicCategorys(int page, int limit) {
-		return new Response<>((Page<MusicCategory>) musicCategoryService.musicCategorys(page, limit));
+	public DataResponse<Page<MusicCategory>> musicCategorys(int page, int limit) {
+		return new DataResponse<>((Page<MusicCategory>) musicCategoryService.musicCategorys(page, limit));
 	}
 
 	@GetMapping("/list")
 	@ApiOperation(value = "获取佛音类别列表", hidden = true)
-	public Response<List<MusicCategory>> list() {
-		return new Response<>(musicCategoryService.list());
+	public DataResponse<List<MusicCategory>> list() {
+		return new DataResponse<>(musicCategoryService.list());
 	}
 
 	@GetMapping("/listTopCategory")
 	@ApiOperation(value = "获取佛音顶级类别列表")
-	public Response<List<MusicCategory>> listTopCategory() {
-		return new Response<>(musicCategoryService.listTopCategory());
+	public DataResponse<List<MusicCategory>> listTopCategory() {
+		return new DataResponse<>(musicCategoryService.listTopCategory());
 	}
 
 	@GetMapping("/pageAlbumByParentId")
 	@ApiOperation(value = "获取顶级类别ID获取专辑列表")
-	public Response<Page<MusicCategoryInfo>> pageAlbumByParentId(Integer parentId, Integer page, Integer limit) {
-		return new Response<>(
+	public DataResponse<Page<MusicCategoryInfo>> pageAlbumByParentId(Integer parentId, Integer page, Integer limit) {
+		return new DataResponse<>(
 				musicCategoryService.pageAlbumByParentId(SecurityUtil.getUserId(), parentId, page, limit));
 	}
 	
 	@PostMapping("/userFavourite")
 	@ApiOperation(value = "用户收藏专辑")
-	public Response<UserFavourite> userFavourite(Integer albumId) {
-		return new Response<>(musicCategoryService.userFavourite(SecurityUtil.getUserId(), albumId));
+	public DataResponse<UserFavourite> userFavourite(Integer albumId) {
+		return new DataResponse<>(musicCategoryService.userFavourite(SecurityUtil.getUserId(), albumId));
 	}
 	
 	@PostMapping("/userRating")
 	@ApiOperation(value = "用户评分专辑")
-	public Response<UserRating> userRating(Integer albumId, double rating) {
-		return new Response<>(musicCategoryService.userRating(SecurityUtil.getUserId(), albumId, rating));
+	public DataResponse<UserRating> userRating(Integer albumId, double rating) {
+		return new DataResponse<>(musicCategoryService.userRating(SecurityUtil.getUserId(), albumId, rating));
 	}
 
 	/******************************** 后台管理 **********************************/
 
 	@PostMapping("/")
 	@ApiOperation(value = "添加佛音类别", hidden = true)
-	public Response<MusicCategory> addition(MusicCategory musicCategory) {
-		return new Response<>(musicCategoryService.addMusicCategory(musicCategory));
+	public DataResponse<MusicCategory> addition(MusicCategory musicCategory) {
+		return new DataResponse<>(musicCategoryService.addMusicCategory(musicCategory));
 	}
 
 	@PutMapping("/")
 	@ApiOperation(value = "修改佛音类别", hidden = true)
-	public Response<MusicCategory> modification(MusicCategory musicCategory) {
-		return new Response<>(musicCategoryService.modifyMusicCategory(musicCategory));
+	public DataResponse<MusicCategory> modification(MusicCategory musicCategory) {
+		return new DataResponse<>(musicCategoryService.modifyMusicCategory(musicCategory));
 	}
 
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "删除佛音类别", hidden = true)
-	public Response<Integer> delete(@PathVariable Integer id) {
+	public DataResponse<Integer> delete(@PathVariable Integer id) {
 		musicCategoryService.deleteMusicCategory(id);
-		return new Response<Integer>(id);
+		return new DataResponse<Integer>(id);
 	}
 
 	@PostMapping("/deletes")
 	@ApiOperation(value = "批量删除佛音类别（多个id以逗号分割）", hidden = true)
-	public Response<Boolean> deletes(String ids) {
+	public DataResponse<Boolean> deletes(String ids) {
 		musicCategoryService.deleteMusicCategorys(ids);
-		return new Response<Boolean>(true);
+		return new DataResponse<Boolean>(true);
 	}
 
 	@GetMapping("/adminList")

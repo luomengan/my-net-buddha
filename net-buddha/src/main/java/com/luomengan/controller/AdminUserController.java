@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.luomengan.entity.AdminUser;
 import com.luomengan.pojo.DataResponse;
-import com.luomengan.pojo.Response;
 import com.luomengan.service.AdminUserService;
 
 import io.swagger.annotations.Api;
@@ -40,48 +39,48 @@ public class AdminUserController {
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "根据id获取管理用户", hidden = true)
-	public Response<AdminUser> fetchById(@PathVariable Integer id) {
-		return new Response<>(adminUserService.getAdminUserInfo(id));
+	public DataResponse<AdminUser> fetchById(@PathVariable Integer id) {
+		return new DataResponse<>(adminUserService.getAdminUserInfo(id));
 	}
 
 	@GetMapping("/page")
 	@ApiOperation(value = "获取管理用户分页数据", hidden = true)
-	public Response<Page<AdminUser>> adminUsers(int page, int limit) {
-		return new Response<>((Page<AdminUser>) adminUserService.adminUsers(page, limit));
+	public DataResponse<Page<AdminUser>> adminUsers(int page, int limit) {
+		return new DataResponse<>((Page<AdminUser>) adminUserService.adminUsers(page, limit));
 	}
 
 	@GetMapping("/list")
 	@ApiOperation(value = "获取管理用户列表", hidden = true)
-	public Response<List<AdminUser>> list() {
-		return new Response<>(adminUserService.list());
+	public DataResponse<List<AdminUser>> list() {
+		return new DataResponse<>(adminUserService.list());
 	}
 
 	/******************************** 后台管理 **********************************/
 
 	@PostMapping("/")
 	@ApiOperation(value = "添加管理用户", hidden = true)
-	public Response<AdminUser> addition(AdminUser adminUser) {
-		return new Response<>(adminUserService.addAdminUser(adminUser));
+	public DataResponse<AdminUser> addition(AdminUser adminUser) {
+		return new DataResponse<>(adminUserService.addAdminUser(adminUser));
 	}
 
 	@PutMapping("/")
 	@ApiOperation(value = "修改管理用户", hidden = true)
-	public Response<AdminUser> modification(AdminUser adminUser) {
-		return new Response<>(adminUserService.modifyAdminUser(adminUser));
+	public DataResponse<AdminUser> modification(AdminUser adminUser) {
+		return new DataResponse<>(adminUserService.modifyAdminUser(adminUser));
 	}
 
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "删除管理用户", hidden = true)
-	public Response<Integer> delete(@PathVariable Integer id) {
+	public DataResponse<Integer> delete(@PathVariable Integer id) {
 		adminUserService.deleteAdminUser(id);
-		return new Response<Integer>(id);
+		return new DataResponse<Integer>(id);
 	}
 
 	@PostMapping("/deletes")
 	@ApiOperation(value = "批量删除管理用户（多个id以逗号分割）", hidden = true)
-	public Response<Boolean> deletes(String ids) {
+	public DataResponse<Boolean> deletes(String ids) {
 		adminUserService.deleteAdminUsers(ids);
-		return new Response<Boolean>(true);
+		return new DataResponse<Boolean>(true);
 	}
 
 	@GetMapping("/adminList")

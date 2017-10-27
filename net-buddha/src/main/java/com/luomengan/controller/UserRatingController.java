@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.luomengan.entity.UserRating;
 import com.luomengan.pojo.DataResponse;
-import com.luomengan.pojo.Response;
 import com.luomengan.service.UserRatingService;
 
 import io.swagger.annotations.Api;
@@ -40,48 +39,48 @@ public class UserRatingController {
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "根据id获取用户评分", hidden = true)
-	public Response<UserRating> fetchById(@PathVariable Integer id) {
-		return new Response<>(userRatingService.getUserRatingInfo(id));
+	public DataResponse<UserRating> fetchById(@PathVariable Integer id) {
+		return new DataResponse<>(userRatingService.getUserRatingInfo(id));
 	}
 
 	@GetMapping("/page")
 	@ApiOperation(value = "获取用户评分分页数据", hidden = true)
-	public Response<Page<UserRating>> userRatings(int page, int limit) {
-		return new Response<>((Page<UserRating>) userRatingService.userRatings(page, limit));
+	public DataResponse<Page<UserRating>> userRatings(int page, int limit) {
+		return new DataResponse<>((Page<UserRating>) userRatingService.userRatings(page, limit));
 	}
 
 	@GetMapping("/list")
 	@ApiOperation(value = "获取用户评分列表", hidden = true)
-	public Response<List<UserRating>> list() {
-		return new Response<>(userRatingService.list());
+	public DataResponse<List<UserRating>> list() {
+		return new DataResponse<>(userRatingService.list());
 	}
 
 	/******************************** 后台管理 **********************************/
 
 	@PostMapping("/")
 	@ApiOperation(value = "添加用户评分", hidden = true)
-	public Response<UserRating> addition(UserRating userRating) {
-		return new Response<>(userRatingService.addUserRating(userRating));
+	public DataResponse<UserRating> addition(UserRating userRating) {
+		return new DataResponse<>(userRatingService.addUserRating(userRating));
 	}
 
 	@PutMapping("/")
 	@ApiOperation(value = "修改用户评分", hidden = true)
-	public Response<UserRating> modification(UserRating userRating) {
-		return new Response<>(userRatingService.modifyUserRating(userRating));
+	public DataResponse<UserRating> modification(UserRating userRating) {
+		return new DataResponse<>(userRatingService.modifyUserRating(userRating));
 	}
 
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "删除用户评分", hidden = true)
-	public Response<Integer> delete(@PathVariable Integer id) {
+	public DataResponse<Integer> delete(@PathVariable Integer id) {
 		userRatingService.deleteUserRating(id);
-		return new Response<Integer>(id);
+		return new DataResponse<Integer>(id);
 	}
 
 	@PostMapping("/deletes")
 	@ApiOperation(value = "批量删除用户评分（多个id以逗号分割）", hidden = true)
-	public Response<Boolean> deletes(String ids) {
+	public DataResponse<Boolean> deletes(String ids) {
 		userRatingService.deleteUserRatings(ids);
-		return new Response<Boolean>(true);
+		return new DataResponse<Boolean>(true);
 	}
 
 	@GetMapping("/adminList")

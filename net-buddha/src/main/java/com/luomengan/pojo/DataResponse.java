@@ -1,5 +1,7 @@
 package com.luomengan.pojo;
 
+import com.luomengan.exception.ExceptionEnum;
+
 /**
  * 数据结果对象
  * 
@@ -23,9 +25,17 @@ public class DataResponse<T> {
 	 */
 	private String message = "OK";
 
+	public DataResponse() {
+	}
+
 	public DataResponse(String code, String message) {
 		this.code = code;
 		this.message = message;
+	}
+
+	public DataResponse(ExceptionEnum exEnum) {
+		this.code = exEnum.getCode();
+		this.message = exEnum.getMessage();
 	}
 
 	public DataResponse(T data) {

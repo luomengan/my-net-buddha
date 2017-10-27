@@ -21,11 +21,11 @@ public interface EndUserDao {
 	public EndUser updateEndUser(EndUser endUser);
 
 	public EndUser retrieveEndUserById(Integer id);
-
+	
 	public Page<EndUser> pageEndUser(int page, int limit);
 
 	public List<EndUser> listEndUser();
 
-	public EndUser retrieveEndUserByPhone(String username);
+	public EndUser retrieveEndUserByPhone(String phone);
 
 }

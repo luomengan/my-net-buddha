@@ -19,7 +19,7 @@ public class ServiceException extends RuntimeException {
 		this.message = exceptionEnum.getMessage();
 	}
 
-	public ServiceException(ExceptionEnum exceptionEnum, Object[] params) {
+	public ServiceException(ExceptionEnum exceptionEnum, Object... params) {
 		this.code = exceptionEnum.getCode();
 		this.message = String.format(exceptionEnum.getMessage(), params);
 	}

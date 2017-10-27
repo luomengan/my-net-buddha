@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.luomengan.entity.UserFavourite;
 import com.luomengan.pojo.DataResponse;
-import com.luomengan.pojo.Response;
 import com.luomengan.service.UserFavouriteService;
 
 import io.swagger.annotations.Api;
@@ -40,48 +39,48 @@ public class UserFavouriteController {
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "根据id获取用户收藏", hidden = true)
-	public Response<UserFavourite> fetchById(@PathVariable Integer id) {
-		return new Response<>(userFavouriteService.getUserFavouriteInfo(id));
+	public DataResponse<UserFavourite> fetchById(@PathVariable Integer id) {
+		return new DataResponse<>(userFavouriteService.getUserFavouriteInfo(id));
 	}
 
 	@GetMapping("/page")
 	@ApiOperation(value = "获取用户收藏分页数据", hidden = true)
-	public Response<Page<UserFavourite>> userFavourites(int page, int limit) {
-		return new Response<>((Page<UserFavourite>) userFavouriteService.userFavourites(page, limit));
+	public DataResponse<Page<UserFavourite>> userFavourites(int page, int limit) {
+		return new DataResponse<>((Page<UserFavourite>) userFavouriteService.userFavourites(page, limit));
 	}
 
 	@GetMapping("/list")
 	@ApiOperation(value = "获取用户收藏列表", hidden = true)
-	public Response<List<UserFavourite>> list() {
-		return new Response<>(userFavouriteService.list());
+	public DataResponse<List<UserFavourite>> list() {
+		return new DataResponse<>(userFavouriteService.list());
 	}
 
 	/******************************** 后台管理 **********************************/
 
 	@PostMapping("/")
 	@ApiOperation(value = "添加用户收藏", hidden = true)
-	public Response<UserFavourite> addition(UserFavourite userFavourite) {
-		return new Response<>(userFavouriteService.addUserFavourite(userFavourite));
+	public DataResponse<UserFavourite> addition(UserFavourite userFavourite) {
+		return new DataResponse<>(userFavouriteService.addUserFavourite(userFavourite));
 	}
 
 	@PutMapping("/")
 	@ApiOperation(value = "修改用户收藏", hidden = true)
-	public Response<UserFavourite> modification(UserFavourite userFavourite) {
-		return new Response<>(userFavouriteService.modifyUserFavourite(userFavourite));
+	public DataResponse<UserFavourite> modification(UserFavourite userFavourite) {
+		return new DataResponse<>(userFavouriteService.modifyUserFavourite(userFavourite));
 	}
 
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "删除用户收藏", hidden = true)
-	public Response<Integer> delete(@PathVariable Integer id) {
+	public DataResponse<Integer> delete(@PathVariable Integer id) {
 		userFavouriteService.deleteUserFavourite(id);
-		return new Response<Integer>(id);
+		return new DataResponse<Integer>(id);
 	}
 
 	@PostMapping("/deletes")
 	@ApiOperation(value = "批量删除用户收藏（多个id以逗号分割）", hidden = true)
-	public Response<Boolean> deletes(String ids) {
+	public DataResponse<Boolean> deletes(String ids) {
 		userFavouriteService.deleteUserFavourites(ids);
-		return new Response<Boolean>(true);
+		return new DataResponse<Boolean>(true);
 	}
 
 	@GetMapping("/adminList")

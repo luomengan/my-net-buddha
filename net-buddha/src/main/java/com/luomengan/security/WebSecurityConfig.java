@@ -1,5 +1,6 @@
 package com.luomengan.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,15 +12,21 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.luomengan.security.jwt.JWTAuthenticationFilter;
 import com.luomengan.security.jwt.JWTLoginFilter;
+import com.luomengan.service.EndUserService;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	private EndUserService endUserService;
+
 	@Bean
 	public JWTLoginFilter jwtLoginFilter() {
 		try {
-			return new JWTLoginFilter(authenticationManager());
+			JWTLoginFilter result = new JWTLoginFilter(authenticationManager());
+			result.setEndUserService(endUserService);
+			return result;
 		} catch (Exception e) {
 			throw new RuntimeException("get AuthenticationManager exception!", e);
 		}

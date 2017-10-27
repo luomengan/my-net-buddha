@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.luomengan.awre.convertor.RatingTypeEnumConverter;
+import com.luomengan.awre.dbconvertor.RatingTypeEnumConverter;
 import com.luomengan.util.enums.RatingTypeEnum;
 
 /**

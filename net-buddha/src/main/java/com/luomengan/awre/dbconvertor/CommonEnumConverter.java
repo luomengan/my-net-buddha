@@ -1,4 +1,4 @@
-package com.luomengan.awre.convertor;
+package com.luomengan.awre.dbconvertor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

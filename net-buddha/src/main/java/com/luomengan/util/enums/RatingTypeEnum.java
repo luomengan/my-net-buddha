@@ -28,11 +28,11 @@ public enum RatingTypeEnum implements CommonalityEnum {
 	}
 
 	@Override
+	@JsonValue
 	public Integer getIndex() {
 		return index;
 	}
 
-	@JsonValue
 	public String getType() {
 		return type;
 	}

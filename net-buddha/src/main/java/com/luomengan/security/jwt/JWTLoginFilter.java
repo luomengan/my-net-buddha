@@ -15,10 +15,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.luomengan.exception.ExceptionEnum;
 import com.luomengan.pojo.AdminUserWithToken;
+import com.luomengan.pojo.DataResponse;
 import com.luomengan.pojo.EndUserWithToken;
-import com.luomengan.pojo.Response;
 import com.luomengan.security.CustomUserDetails;
 import com.luomengan.security.CustomUsernamePasswordAuthenticationToken;
+import com.luomengan.service.EndUserService;
 import com.luomengan.util.JacksonUtil;
 
 import io.swagger.models.HttpMethod;
@@ -26,6 +27,8 @@ import io.swagger.models.HttpMethod;
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
 	private static final String loginUrl = "/login";
+
+	private EndUserService endUserService;
 
 	public JWTLoginFilter(AuthenticationManager authManager) {
 		super(new AntPathRequestMatcher(loginUrl, HttpMethod.POST.name()));
@@ -51,21 +54,21 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 		String token = JWTTokenUtil.generateToken(customUserDetails);
 		customUserDetails.setToken(token);
 		// step 2 : 返回用户信息和token到客户端
-		Response<?> result = null;
+		DataResponse<?> result = null;
 		if (customUserDetails.isAdmin()) {
 			AdminUserWithToken user = new AdminUserWithToken();
 			user.setToken(token);
 			user.setId(customUserDetails.getUserId());
 			user.setName(customUserDetails.getName());
 			user.setUsername(customUserDetails.getUsername());
-			result = new Response<AdminUserWithToken>(user);
+			result = new DataResponse<AdminUserWithToken>(user);
 		} else {
-			EndUserWithToken user = new EndUserWithToken();
+			Integer userId = customUserDetails.getUserId();
+			EndUserWithToken user = new EndUserWithToken(endUserService.getEndUserInfo(userId));
 			user.setToken(token);
-			user.setId(customUserDetails.getUserId());
-			user.setName(customUserDetails.getName());
-			user.setPhone(customUserDetails.getUsername());
-			result = new Response<EndUserWithToken>(user);
+			user.setMeritValue(endUserService.getUserMeritValue(userId));
+			user.setConsumeMeritValue(endUserService.getUserConsumeMerit(userId));
+			result = new DataResponse<EndUserWithToken>(user);
 		}
 		res.setContentType("application/json;charset=utf-8");
 		res.setStatus(HttpServletResponse.SC_OK);
@@ -77,7 +80,12 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 			AuthenticationException failed) throws IOException, ServletException {
 		response.setContentType("application/json;charset=utf-8");
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-		Response<String> result = new Response<>(ExceptionEnum.Username_Or_Password_Error_Exception);
+		DataResponse<String> result = new DataResponse<>(ExceptionEnum.UsernameOrPasswordError_Exception);
 		response.getWriter().println(JacksonUtil.encode(result));
 	}
+
+	public void setEndUserService(EndUserService endUserService) {
+		this.endUserService = endUserService;
+	}
+
 }
