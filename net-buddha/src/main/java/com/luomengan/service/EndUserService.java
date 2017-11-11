@@ -145,6 +145,7 @@ public class EndUserService {
 		endUser.setPhone(phone);
 		endUser.setPassword(password);
 		endUser.setGender(GenderEnum.Man);
+		endUser.setCreateTime(new Date());
 		endUserDao.createEndUser(endUser);
 		return endUser;
 	}
