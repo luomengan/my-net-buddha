@@ -46,8 +46,8 @@ public class WebMvcConfiguration extends WebMvcConfigurerAdapter {
 				for (File file : files) {
 					if (file.isDirectory()) {
 						String fileName = file.getName();
-						registry.addResourceHandler("/" + fileName + "/**")
-								.addResourceLocations("file:" + outerResources + fileName + "/");
+						String fileDir = "file:" + outerResources + fileName + "/";
+						registry.addResourceHandler("/" + fileName + "/**").addResourceLocations(fileDir);
 					}
 				}
 			}

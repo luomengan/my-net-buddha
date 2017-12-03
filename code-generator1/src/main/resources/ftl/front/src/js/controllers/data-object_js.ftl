@@ -86,6 +86,12 @@ function ${dataObjectPojo.humpName}AdminControllerFn($scope, $modal, toaster, $h
 function ${dataObjectPojo.humpName}AddControllerFn($scope, $modalInstance, toaster, $http, tokenService) {
     $scope.${dataObjectPojo.humpName} = {};
     
+    <#list dataColumnPojoList as being>
+	<#if being.type == "Boolean">
+	$scope.${dataObjectPojo.humpName}.${being.name} = "false";
+	</#if>
+	</#list>
+    
     // 请求添加
     $scope.request${dataObjectPojo.name}Add = function(isValid) {
         if(isValid) {

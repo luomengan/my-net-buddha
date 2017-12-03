@@ -12,7 +12,7 @@ angular.module('app')
 
       // config
       $scope.app = {
-        name: '华人佛教',
+        name: 'Code Monkey',
         version: '1.0',
         // for chart colors
         color: {

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ${basePackage}.entity.${dataObjectPojo.name};
 import ${basePackage}.pojo.DataResponse;
-import ${basePackage}.pojo.Response;
 import ${basePackage}.service.${dataObjectPojo.name}Service;
 
 import io.swagger.annotations.Api;
@@ -40,48 +39,48 @@ public class ${dataObjectPojo.name}Controller {
 
 	@GetMapping("/{id}")
 	@ApiOperation(value = "根据id获取${dataObjectPojo.description}")
-	public Response<${dataObjectPojo.name}> fetchById(@PathVariable Integer id) {
-		return new Response<>(${dataObjectPojo.humpName}Service.get${dataObjectPojo.name}Info(id));
+	public DataResponse<${dataObjectPojo.name}> fetchById(@PathVariable Integer id) {
+		return new DataResponse<>(${dataObjectPojo.humpName}Service.get${dataObjectPojo.name}Info(id));
 	}
 
 	@GetMapping("/page")
 	@ApiOperation(value = "获取${dataObjectPojo.description}分页数据")
-	public Response<Page<${dataObjectPojo.name}>> ${dataObjectPojo.humpName}s(int page, int limit) {
-		return new Response<>((Page<${dataObjectPojo.name}>) ${dataObjectPojo.humpName}Service.${dataObjectPojo.humpName}s(page, limit));
+	public DataResponse<Page<${dataObjectPojo.name}>> ${dataObjectPojo.humpName}s(int page, int limit) {
+		return new DataResponse<>((Page<${dataObjectPojo.name}>) ${dataObjectPojo.humpName}Service.${dataObjectPojo.humpName}s(page, limit));
 	}
 	
 	@GetMapping("/list")
 	@ApiOperation(value = "获取${dataObjectPojo.description}列表")
-	public Response<List<${dataObjectPojo.name}>> list() {
-		return new Response<>(${dataObjectPojo.humpName}Service.list());
+	public DataResponse<List<${dataObjectPojo.name}>> list() {
+		return new DataResponse<>(${dataObjectPojo.humpName}Service.list());
 	}
 	
 	/******************************** 后台管理 **********************************/
 	
 	@PostMapping("/")
 	@ApiOperation(value = "添加${dataObjectPojo.description}", hidden = true)
-	public Response<${dataObjectPojo.name}> addition(${dataObjectPojo.name} ${dataObjectPojo.humpName}) {
-		return new Response<>(${dataObjectPojo.humpName}Service.add${dataObjectPojo.name}(${dataObjectPojo.humpName}));
+	public DataResponse<${dataObjectPojo.name}> addition(${dataObjectPojo.name} ${dataObjectPojo.humpName}) {
+		return new DataResponse<>(${dataObjectPojo.humpName}Service.add${dataObjectPojo.name}(${dataObjectPojo.humpName}));
 	}
 
 	@PutMapping("/")
 	@ApiOperation(value = "修改${dataObjectPojo.description}", hidden = true)
-	public Response<${dataObjectPojo.name}> modification(${dataObjectPojo.name} ${dataObjectPojo.humpName}) {
-		return new Response<>(${dataObjectPojo.humpName}Service.modify${dataObjectPojo.name}(${dataObjectPojo.humpName}));
+	public DataResponse<${dataObjectPojo.name}> modification(${dataObjectPojo.name} ${dataObjectPojo.humpName}) {
+		return new DataResponse<>(${dataObjectPojo.humpName}Service.modify${dataObjectPojo.name}(${dataObjectPojo.humpName}));
 	}
 
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "删除${dataObjectPojo.description}", hidden = true)
-	public Response<Integer> delete(@PathVariable Integer id) {
+	public DataResponse<Integer> delete(@PathVariable Integer id) {
 		${dataObjectPojo.humpName}Service.delete${dataObjectPojo.name}(id);
-		return new Response<Integer>(id);
+		return new DataResponse<Integer>(id);
 	}
 	
 	@PostMapping("/deletes")
 	@ApiOperation(value = "批量删除${dataObjectPojo.description}（多个id以逗号分割）", hidden = true)
-	public Response<Boolean> deletes(String ids) {
+	public DataResponse<Boolean> deletes(String ids) {
 		${dataObjectPojo.humpName}Service.delete${dataObjectPojo.name}s(ids);
-		return new Response<Boolean>(true);
+		return new DataResponse<Boolean>(true);
 	}
 	
 	@GetMapping("/adminList")

@@ -114,8 +114,6 @@ public class SkeletonGeneratorService {
 		// step 4 : 生成一些base类
 		FreeMakerUtil.generateFile(backFtlDir + "/base", "BootApplication.ftl", projectRoot,
 				new File(basePackageDir, "BootApplication.java"));
-		FreeMakerUtil.generateFile(backFtlDir + "/base", "Response.ftl", projectRoot,
-				new File(basePackageDir, "pojo/Response.java"));
 		FreeMakerUtil.generateFile(backFtlDir + "/base", "DataResponse.ftl", projectRoot,
 				new File(basePackageDir, "pojo/DataResponse.java"));
 		FreeMakerUtil.generateFile(backFtlDir + "/base", "SwaggerConfigration.ftl", projectRoot,
