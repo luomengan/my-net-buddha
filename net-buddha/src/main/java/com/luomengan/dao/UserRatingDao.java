@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.luomengan.entity.UserRating;
-import com.luomengan.util.enums.RatingTypeEnum;
+import com.luomengan.entity.dbenum.RatingTypeEnum;
 
 /**
  * 用户评分 Dao

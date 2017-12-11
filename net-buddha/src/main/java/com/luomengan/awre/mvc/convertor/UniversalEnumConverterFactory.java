@@ -7,7 +7,7 @@ import java.util.WeakHashMap;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.converter.ConverterFactory;
 
-import com.luomengan.util.enums.CommonalityEnum;
+import com.luomengan.entity.dbenum.CommonalityEnum;
 
 /**
  * 通用的枚举转换工厂类

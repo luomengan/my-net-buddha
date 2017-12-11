@@ -14,11 +14,11 @@ import com.luomengan.dao.UserRatingDao;
 import com.luomengan.entity.MusicCategory;
 import com.luomengan.entity.UserFavourite;
 import com.luomengan.entity.UserRating;
+import com.luomengan.entity.dbenum.FavouriteTypeEnum;
+import com.luomengan.entity.dbenum.RatingTypeEnum;
 import com.luomengan.exception.ExceptionEnum;
 import com.luomengan.exception.ServiceException;
 import com.luomengan.pojo.MusicCategoryInfo;
-import com.luomengan.util.enums.FavouriteTypeEnum;
-import com.luomengan.util.enums.RatingTypeEnum;
 
 /**
  * 佛音类别 Service

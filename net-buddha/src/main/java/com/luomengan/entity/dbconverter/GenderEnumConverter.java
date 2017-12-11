@@ -1,8 +1,8 @@
-package com.luomengan.awre.dbconvertor;
+package com.luomengan.entity.dbconverter;
 
 import javax.persistence.AttributeConverter;
 
-import com.luomengan.util.enums.GenderEnum;
+import com.luomengan.entity.dbenum.GenderEnum;
 
 /**
  * 性别类型转换器

@@ -1,7 +1,7 @@
 package com.luomengan.pojo;
 
 import com.luomengan.entity.EndUser;
-import com.luomengan.util.enums.ConsumeMeritGradeEnum;
+import com.luomengan.entity.dbenum.ConsumeMeritGradeEnum;
 
 public class EndUserWithToken extends EndUser {
 

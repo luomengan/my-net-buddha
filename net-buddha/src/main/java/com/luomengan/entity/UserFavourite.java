@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.luomengan.awre.dbconvertor.FavouriteTypeEnumConverter;
-import com.luomengan.util.enums.FavouriteTypeEnum;
+import com.luomengan.entity.dbconverter.FavouriteTypeEnumConverter;
+import com.luomengan.entity.dbenum.FavouriteTypeEnum;
 
 /**
  * 

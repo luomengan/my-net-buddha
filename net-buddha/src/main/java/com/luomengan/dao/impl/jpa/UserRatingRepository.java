@@ -8,7 +8,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.Repository;
 
 import com.luomengan.entity.UserRating;
-import com.luomengan.util.enums.RatingTypeEnum;
+import com.luomengan.entity.dbenum.RatingTypeEnum;
 
 /**
  * 用户评分 Repository

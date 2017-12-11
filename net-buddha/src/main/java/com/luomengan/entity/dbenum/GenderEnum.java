@@ -1,4 +1,4 @@
-package com.luomengan.util.enums;
+package com.luomengan.entity.dbenum;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 性别枚举
+ * 性别
  * 
  * @author luomengan
  *

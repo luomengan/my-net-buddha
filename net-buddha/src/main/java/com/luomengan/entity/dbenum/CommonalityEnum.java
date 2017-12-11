@@ -1,4 +1,4 @@
-package com.luomengan.util.enums;
+package com.luomengan.entity.dbenum;
 
 /**
  * 通用的枚举类型接口，为通用枚举接口做抽象

@@ -1,4 +1,4 @@
-package com.luomengan.util.enums;
+package com.luomengan.entity.dbenum;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 

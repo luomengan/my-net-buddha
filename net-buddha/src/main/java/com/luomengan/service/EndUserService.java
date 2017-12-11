@@ -20,9 +20,9 @@ import com.luomengan.dao.EndUserDao;
 import com.luomengan.dao.UserMeritWalletDao;
 import com.luomengan.entity.EndUser;
 import com.luomengan.entity.UserMeritWallet;
+import com.luomengan.entity.dbenum.GenderEnum;
 import com.luomengan.exception.ExceptionEnum;
 import com.luomengan.exception.ServiceException;
-import com.luomengan.util.enums.GenderEnum;
 
 /**
  * 终端用户 Service

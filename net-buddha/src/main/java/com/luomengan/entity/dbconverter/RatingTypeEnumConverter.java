@@ -1,8 +1,8 @@
-package com.luomengan.awre.dbconvertor;
+package com.luomengan.entity.dbconverter;
 
 import javax.persistence.AttributeConverter;
 
-import com.luomengan.util.enums.RatingTypeEnum;
+import com.luomengan.entity.dbenum.RatingTypeEnum;
 
 /**
  * 评分类型转换器

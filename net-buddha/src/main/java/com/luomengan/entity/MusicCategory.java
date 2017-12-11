@@ -20,7 +20,7 @@ public class MusicCategory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	/**
 	 * 名称
 	 */
@@ -29,6 +29,10 @@ public class MusicCategory {
 	 * 作者
 	 */
 	private String author;
+	/**
+	 * 封面
+	 */
+	private String coverLink;
 	/**
 	 * 描述
 	 */
@@ -73,81 +77,89 @@ public class MusicCategory {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getAuthor() {
 		return author;
 	}
-	
+
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	
+
 	public String getTxtDescription() {
 		return txtDescription;
 	}
-	
+
 	public void setTxtDescription(String txtDescription) {
 		this.txtDescription = txtDescription;
 	}
-	
+
 	public Integer getLevel() {
 		return level;
 	}
-	
+
 	public void setLevel(Integer level) {
 		this.level = level;
 	}
-	
+
 	public Boolean getIsHomeTop() {
 		return isHomeTop;
 	}
-	
+
 	public void setIsHomeTop(Boolean isHomeTop) {
 		this.isHomeTop = isHomeTop;
 	}
-	
+
 	public Integer getHomeTopSortNum() {
 		return homeTopSortNum;
 	}
-	
+
 	public void setHomeTopSortNum(Integer homeTopSortNum) {
 		this.homeTopSortNum = homeTopSortNum;
 	}
-	
+
 	public Boolean getIsRecommend() {
 		return isRecommend;
 	}
-	
+
 	public void setIsRecommend(Boolean isRecommend) {
 		this.isRecommend = isRecommend;
 	}
-	
+
 	public Integer getSortNum() {
 		return sortNum;
 	}
-	
+
 	public void setSortNum(Integer sortNum) {
 		this.sortNum = sortNum;
 	}
-	
+
 	public Integer getParentId() {
 		return parentId;
 	}
-	
+
 	public void setParentId(Integer parentId) {
 		this.parentId = parentId;
 	}
-	
+
 	public Integer getPlayTimes() {
 		return playTimes;
 	}
-	
+
 	public void setPlayTimes(Integer playTimes) {
 		this.playTimes = playTimes;
 	}
-	
+
+	public String getCoverLink() {
+		return coverLink;
+	}
+
+	public void setCoverLink(String coverLink) {
+		this.coverLink = coverLink;
+	}
+
 }

@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.luomengan.awre.dbconvertor.MeritFlowTypeEnumConverter;
-import com.luomengan.util.enums.MeritFlowTypeEnum;
+import com.luomengan.entity.dbconverter.MeritFlowTypeEnumConverter;
+import com.luomengan.entity.dbenum.MeritFlowTypeEnum;
 
 /**
  * 用户功德流水

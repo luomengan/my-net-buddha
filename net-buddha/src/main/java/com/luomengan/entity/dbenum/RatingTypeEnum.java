@@ -1,4 +1,4 @@
-package com.luomengan.util.enums;
+package com.luomengan.entity.dbenum;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,12 +6,12 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * 收藏类型枚举
+ * 评分类型
  * 
  * @author luomengan
  *
  */
-public enum FavouriteTypeEnum implements CommonalityEnum {
+public enum RatingTypeEnum implements CommonalityEnum {
 
 	Other(0, "其他"),
 
@@ -22,7 +22,7 @@ public enum FavouriteTypeEnum implements CommonalityEnum {
 	private Integer index;
 	private String type;
 
-	FavouriteTypeEnum(Integer index, String type) {
+	RatingTypeEnum(Integer index, String type) {
 		this.index = index;
 		this.type = type;
 	}
@@ -37,16 +37,16 @@ public enum FavouriteTypeEnum implements CommonalityEnum {
 		return type;
 	}
 
-	private static Map<Integer, FavouriteTypeEnum> valueMap = new HashMap<>();
+	private static Map<Integer, RatingTypeEnum> valueMap = new HashMap<>();
 
 	static {
-		for (FavouriteTypeEnum _enum : FavouriteTypeEnum.values()) {
+		for (RatingTypeEnum _enum : RatingTypeEnum.values()) {
 			valueMap.put(_enum.getIndex(), _enum);
 		}
 	}
 
-	public static FavouriteTypeEnum getByIndex(Integer index) {
-		FavouriteTypeEnum result = valueMap.get(index);
+	public static RatingTypeEnum getByIndex(Integer index) {
+		RatingTypeEnum result = valueMap.get(index);
 		if (result == null) {
 			throw new IllegalArgumentException("No element matches " + index);
 		}

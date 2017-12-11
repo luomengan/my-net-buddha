@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.Repository;
 
 import com.luomengan.entity.UserFavourite;
-import com.luomengan.util.enums.FavouriteTypeEnum;
+import com.luomengan.entity.dbenum.FavouriteTypeEnum;
 
 /**
  * 用户收藏 Repository

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 
 import com.luomengan.entity.UserFavourite;
-import com.luomengan.util.enums.FavouriteTypeEnum;
+import com.luomengan.entity.dbenum.FavouriteTypeEnum;
 
 /**
  * 用户收藏 Dao

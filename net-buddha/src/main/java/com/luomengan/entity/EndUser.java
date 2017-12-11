@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.luomengan.awre.dbconvertor.GenderEnumConverter;
-import com.luomengan.util.enums.GenderEnum;
+import com.luomengan.entity.dbconverter.GenderEnumConverter;
+import com.luomengan.entity.dbenum.GenderEnum;
 
 /**
  * 

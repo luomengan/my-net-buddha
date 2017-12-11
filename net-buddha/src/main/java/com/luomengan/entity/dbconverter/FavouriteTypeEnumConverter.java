@@ -1,8 +1,8 @@
-package com.luomengan.awre.dbconvertor;
+package com.luomengan.entity.dbconverter;
 
 import javax.persistence.AttributeConverter;
 
-import com.luomengan.util.enums.FavouriteTypeEnum;
+import com.luomengan.entity.dbenum.FavouriteTypeEnum;
 
 /**
  * 收藏类型转换器

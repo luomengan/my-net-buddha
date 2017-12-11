@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.luomengan.dao.UserFavouriteDao;
 import com.luomengan.dao.impl.jpa.UserFavouriteRepository;
 import com.luomengan.entity.UserFavourite;
-import com.luomengan.util.enums.FavouriteTypeEnum;
+import com.luomengan.entity.dbenum.FavouriteTypeEnum;
 
 /**
  * 用户收藏 Dao实现
