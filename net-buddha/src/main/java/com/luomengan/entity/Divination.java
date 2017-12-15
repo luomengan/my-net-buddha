@@ -17,7 +17,7 @@ import com.luomengan.entity.dbenum.DivinationTypeEnum;
  *
  */
 @Entity
-@Table(name = "divination")
+@Table(name = "t_divination")
 public class Divination {
 
 	@Id

@@ -16,7 +16,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "blessing_lamp")
+@Table(name = "t_blessing_lamp")
 public class BlessingLamp {
 
 	@Id

@@ -17,7 +17,7 @@ import com.luomengan.entity.dbenum.OfferingTypeEnum;
  *
  */
 @Entity
-@Table(name = "offering")
+@Table(name = "t_offering")
 public class Offering {
 
 	@Id

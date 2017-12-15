@@ -13,7 +13,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "joss")
+@Table(name = "t_joss")
 public class Joss {
 
 	@Id

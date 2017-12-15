@@ -18,7 +18,7 @@ import org.hibernate.annotations.Type;
  *
  */
 @Entity
-@Table(name = "almanac")
+@Table(name = "t_almanac")
 public class Almanac implements Serializable {
 
 	private static final long serialVersionUID = -3134119135723936174L;

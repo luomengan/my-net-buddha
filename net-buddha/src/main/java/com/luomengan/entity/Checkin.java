@@ -15,7 +15,7 @@ import javax.persistence.Table;
  *
  */
 @Entity
-@Table(name = "checkin")
+@Table(name = "t_checkin")
 public class Checkin {
 
 	@Id
