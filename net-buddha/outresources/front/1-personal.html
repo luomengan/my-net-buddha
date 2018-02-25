@@ -174,5 +174,29 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+	<script type="text/javascript">
+	/*
+	var layer;
+	layui.use('layer', function() {
+		layer = layui.layer
+	});
+	*/
+	$(function(){
+		var token = sessionStorage.getItem('token');
+		$.ajax({
+			type: "GET",
+		   	url: "/net-buddha/endUser/getCurrent",
+		   	headers: {
+		   		Authorization: token
+		   	},
+		   	success: function(response) {
+		     	alert('当前为登录状态!');
+		   	},
+		   	error: function(XMLHttpRequest, textStatus, errorThrown) {
+		   		window.location.href = '/net-buddha/front/1-login.html';
+		   	}
+		});
+	});
+	</script>
 </body>
 </html>

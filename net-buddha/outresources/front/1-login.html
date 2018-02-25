@@ -50,6 +50,11 @@
     	line-height: 30px;
     	font-size: 13px;
 	}
+	.layui-layer-hui .layui-layer-content {
+		padding-top: 5px!important;
+    	padding-bottom: 5px!important;
+    	font-size: 13px!important;
+	}
 	</style>
     <!--[if lt IE 9]>
 	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -60,12 +65,12 @@
 	<header class="navtop navbar-fixed-top">登录</header>
 	<div id="content">
 		<h4 class="logo-header"><img src="img/logo.png" /></h4>
-		<form class="login-form">
-			<div class="login-username"><img src="img/username.png" width="15px" /><input type="text" placeholder="手机号码" /></div>
-			<div class="login-password"><img src="img/password.png" width="15px" /><input type="password" placeholder="请输入密码" /></div>
+		<form id="loginForm" class="login-form">
+			<div class="login-username"><img src="img/username.png" width="15px" /><input type="text" name="username" placeholder="手机号码" /></div>
+			<div class="login-password"><img src="img/password.png" width="15px" /><input type="password" name="password" placeholder="请输入密码" /></div>
 			<div class="login-btn-container">
-				<button class="layui-btn layui-btn-radius">&nbsp;登　录&nbsp;</button>
-				<button class="layui-btn layui-btn-primary layui-btn-radius">&nbsp;注　册&nbsp;</button>
+				<button id="loginBtn" type="button" class="layui-btn layui-btn-radius">&nbsp;登　录&nbsp;</button>
+				<button type="button" class="layui-btn layui-btn-primary layui-btn-radius">&nbsp;注　册&nbsp;</button>
 			</div>
 		</form>
 	</div>
@@ -73,5 +78,32 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
 	<script src="plugins/layui/layui.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	var layer;
+	layui.use('layer', function() {
+		layer = layui.layer
+	});
+	$(function(){
+		$("#loginBtn").on("click", function(){
+			var reqData = $("#loginForm").serialize();
+			$.ajax({
+				type: "POST",
+			   	url: "/net-buddha/login",
+			   	data: reqData,
+			   	success: function(response) {
+			     	if(response.code != '200') {
+			     		layer.msg(response.message, {
+			     			offset: '45px'
+			     		});
+			     	} else {
+			     		sessionStorage.setItem('phone', response.data.phone);
+			     		sessionStorage.setItem('token', response.data.token);
+			     		window.location.href = '/net-buddha/front/1-personal.html';
+			     	}
+			   	}
+			});
+		});
+	});
+	</script>
 </body>
 </html>

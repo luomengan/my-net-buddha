@@ -79,7 +79,7 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 	protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException failed) throws IOException, ServletException {
 		response.setContentType("application/json;charset=utf-8");
-		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+		response.setStatus(HttpServletResponse.SC_OK);
 		DataResponse<String> result = new DataResponse<>(ExceptionEnum.UsernameOrPasswordError_Exception);
 		response.getWriter().println(JacksonUtil.encode(result));
 	}
