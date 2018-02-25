@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>功德充值</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+	.charge-list {
+		margin-top: 45px;
+		padding-top: 1px;
+	}
+	.charge-list li {
+		margin: 10px;
+		padding: 7px;
+		background-color: #efefef;
+		border: 2px solid #888;
+	}
+	.charge-list li.active {
+		background-color: #999;
+	}
+	.charge-list li .amount {
+		float: right;
+	}
+	.button_sp_area {
+		text-align: center;
+	}
+	.button_sp_area button {
+		margin-top: 10px!important;
+		margin-bottom: 10px!important;
+		width: 45%;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="navtop navbar-fixed-top"><a href="1-personal.html" class="back"><返回</a><span>功德充值<span></header>
+	<div id="content">
+		<ul class="charge-list">
+			<li class="active"><span class="desc">10功德</span><span class="amount">1元</span></li>
+			<li><span class="desc">100+10功德</span><span class="amount">10元</span></li>
+			<li><span class="desc">500+50功德</span><span class="amount">50元</span></li>
+			<li><span class="desc">1000+100功德</span><span class="amount">100元</span></li>
+			<li><span class="desc">2000+300功德</span><span class="amount">200元</span></li>
+			<li><span class="desc">5000+1000功德</span><span class="amount">500元</span></li>
+		</ul>
+		<div class="custom-amount">
+			<div class="weui-cells__title">其他金额</div>
+			<div class="weui-cells">
+				<div class="weui-cell">
+					<div class="weui-cell__bd">
+						<input class="weui-input" type="number" placeholder="输入金额">
+					</div>
+				</div>
+			</div>
+		</div>		
+		<div class="button_sp_area">
+			<button class="weui-btn weui-btn_mini weui-btn_primary" style="margin-right: 5px;">微信</button>
+			<button class="weui-btn weui-btn_mini weui-btn_primary">支付宝</button>
+		</div>
+	</div>
+	<footer class="navbottom navbar-fixed-bottom">
+		<div class="weui-tabbar">
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_button.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">拜佛</p>
+			</a> 
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_msg.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">修行</p>
+			</a> 
+			<a href="2-album-list.html" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_article.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">佛音</p>
+			</a> 
+			<a href="1-personal.html" class="weui-tabbar__item weui-bar__item--on">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_cell.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">我的</p>
+			</a>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+</body>
+</html>

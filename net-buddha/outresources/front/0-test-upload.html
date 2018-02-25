@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>测试上传图片</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+	#consume-list {
+		font-size: 14px;
+	}
+	#consume-list .weui-cell p {
+		margin-bottom: 0px;
+	}
+	#consume-list .weui-cell .desc {
+		font-weight: bold;
+	}
+	#consume-list .weui-cell .weui-cell__ft {
+		color: #000;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<form id="form1" runat="server">
+	<input type='file' id="imgInp" />
+	<div>
+	<img id="blah" src="#" alt="显示您上传的商品图片" width="200px" />
+	</div>  
+	</form>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdn.bootcss.com/jquery-weui/1.2.0/js/jquery-weui.min.js"></script>
+	
+	<script>
+		function readURL(input) {
+		   if (input.files && input.files[0]) {
+			   var reader = new FileReader();
+			   reader.onload = function (e) {
+				   $('#blah').attr('src', e.target.result);
+			   }
+			   reader.readAsDataURL(input.files[0]);
+		   }
+		}
+		$("#imgInp").change(function(){
+		   readURL(this);
+		});
+	</script>
+</body>
+</html>

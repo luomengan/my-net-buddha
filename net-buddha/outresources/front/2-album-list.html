@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>佛音专辑列表</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+	.weui-grids:before {
+		border-top: none;
+	}
+	.weui-grids:after {
+		border-left: none;
+	}
+	.weui-grid {
+		padding: 0px;
+		margin-bottom: 0px;
+	}
+	.weui-grid:before {
+		border-right: none;
+	}
+	.weui-grid:after {
+		border-bottom: none;
+	}
+	.album {
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	.album p {
+		margin-bottom: 0px;
+	}
+	.album .name {
+		font-size: 13px;
+		color: #000;
+		margin-bottom: 0px;
+		line-height: 18px;
+	}
+	.album .author-box {
+		line-height: 12px;
+	}
+	.album .author {
+		font-size: 11px;
+		color: #aaa;
+	}
+	.album .icon {
+		float: right;
+		vertical-align: middle;
+		margin-top: 1px;
+	}
+	
+	.album-category {
+		border-top: 2px solid #c0bfc4;
+		border-bottom: 2px solid #c0bfc4;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 0px;
+	}
+	.album-category li {
+		display: inline-block;
+		width: 23%;
+		text-align: center;
+	}
+	.album-category li span {
+		padding-bottom: 1px;
+	}
+	.album-category li.active span {
+		border-bottom: 0.1em solid #c0bfc4;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="navtop navbar-fixed-top">佛音专辑列表</header>
+	<div id="content" class="paddingt10">
+		<ul class="album-category">
+			<li class="active"><span>&nbsp;清音&nbsp;</span></li>
+			<li><span>&nbsp;凡歌&nbsp;</span></li>
+			<li><span>&nbsp;禅乐&nbsp;</span></li>
+			<li><span>&nbsp;诵唱&nbsp;</span></li>
+		</ul>
+		
+		<div class="weui-grids marginl10 paddingt10">
+			<div class="weui-grid js_grid">
+				<div class="album">
+					<a href="2-album.html"><img src="img/album.jpg" width="100%" /></a>
+					<p class="name">这是专辑名字...</p>
+					<p class="author-box"><span class="author">黄晓明</span><img class="icon" src="img/album_icon.jpg" /><p>
+				</div>
+			</div>
+			<div class="weui-grid js_grid">
+				<div class="album">
+					<a href="2-album.html"><img src="img/album.jpg" width="100%" /></a>
+					<p class="name">这是专辑名字...</p>
+					<p class="author-box"><span class="author">黄晓明</span><img class="icon" src="img/album_icon.jpg" /><p>
+				</div>
+			</div>
+			<div class="weui-grid js_grid">
+				<div class="album">
+					<a href="2-album.html"><img src="img/album.jpg" width="100%" /></a>
+					<p class="name">这是专辑名字...</p>
+					<p class="author-box"><span class="author">黄晓明</span><img class="icon" src="img/album_icon.jpg" /><p>
+				</div>
+			</div>
+			<div class="weui-grid js_grid">
+				<div class="album">
+					<a href="2-album.html"><img src="img/album.jpg" width="100%" /></a>
+					<p class="name">这是专辑名字...</p>
+					<p class="author-box"><span class="author">黄晓明</span><img class="icon" src="img/album_icon.jpg" /><p>
+				</div>
+			</div>
+			<div class="weui-grid js_grid">
+				<div class="album">
+					<a href="2-album.html"><img src="img/album.jpg" width="100%" /></a>
+					<p class="name">这是专辑名字...</p>
+					<p class="author-box"><span class="author">黄晓明</span><img class="icon" src="img/album_icon.jpg" /><p>
+				</div>
+			</div>
+			<div class="weui-grid js_grid">
+				<div class="album">
+					<a href="2-album.html"><img src="img/album.jpg" width="100%" /></a>
+					<p class="name">这是专辑名字...</p>
+					<p class="author-box"><span class="author">黄晓明</span><img class="icon" src="img/album_icon.jpg" /><p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="navbottom navbar-fixed-bottom">
+		<div class="weui-tabbar">
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_button.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">拜佛</p>
+			</a> 
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_msg.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">修行</p>
+			</a>
+			<a href="2-album-list.html" class="weui-tabbar__item weui-bar__item--on">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_article.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">佛音</p>
+			</a> 
+			<a href="1-personal.html" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_cell.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">我的</p>
+			</a>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+</body>
+</html>

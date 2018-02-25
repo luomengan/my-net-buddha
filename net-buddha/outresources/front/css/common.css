@@ -1,0 +1,73 @@
+body {
+	font-size: 14px;
+	background-color: #fbfbfb;
+}
+.self-row {
+	display: table;
+	width: 100%;
+}
+.submit-btn {
+	height: 35px;
+	line-height: 35px;
+	font-size: 15px;
+}
+.nodesc {
+	text-decoration: none!important;
+}
+.marginl10 {
+	margin-left: 10px!important;
+}
+.marginr0 {
+	margin-right: 0px!important;
+}
+.margint10 {
+	margin-top: 10px!important;
+}
+.marginb5 {
+	margin-bottom: 5px!important;
+}
+.paddingt10 {
+	padding-top: 10px!important;
+}
+.time-str {
+	font-size: 13px;
+	color: #999;
+}
+.clearboth {
+	clear: both;
+}
+/* 顶部导航 */
+.navtop {
+	text-align:right;
+	padding: 10px;
+	padding-right: 20px;
+	font-size: 15px;
+	border-bottom: 1px solid #ddd;
+	background: #fff;
+}
+.navtop .back {
+	float: left;
+	text-decoration: none;
+	font-size: 14px;
+}
+/* 正文 */
+#content {
+	width: 100%;
+	margin-top: 45px;
+	margin-bottom: 50px;
+	background: #fff;
+}
+/* 底部导航 */
+.navbottom {
+	background-color: #fff;
+}
+.navbottom .weui-tabbar {
+	background-color: #fff;
+}
+.navbottom .weui-tabbar>a {
+	text-decoration: none;
+}
+.navbottom .weui-tabbar .weui-tabbar__label {
+	margin-bottom: 0px;
+	font-size: 12px;
+}

@@ -26,6 +26,10 @@ public class UserMeritFlow {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	/**
+	 * 用户ID
+	 */
+	private Integer userId;
+	/**
 	 * 流水号
 	 */
 	private String flowNo;
@@ -81,6 +85,14 @@ public class UserMeritFlow {
 
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 }

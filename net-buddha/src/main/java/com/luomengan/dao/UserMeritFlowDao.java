@@ -26,4 +26,6 @@ public interface UserMeritFlowDao {
 	
 	public List<UserMeritFlow> listUserMeritFlow();
 
+	public Integer retriveUserConsumeMerit(Integer userId);
+
 }

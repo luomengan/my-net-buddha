@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>音乐播放</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/smusic.css"/>
+	<style>
+	.grid-music-container {
+		margin-top: 0px;
+		padding: 0px;
+		width: 90%;
+	}
+	.grid-music-container .m-music-play-wrap {
+		padding-left: 0px; 
+	}
+	.grid-music-container .u-cover.play {
+		text-align: center;
+	}
+	.grid-music-container .u-cover {
+		position: inherit;
+	}
+	.u-music-title {
+		text-align: center;
+		margin-top: 15px;
+	}
+	.grid-music-container .m-now-info strong {
+		font-size: 18px;
+	}
+	.grid-music-container .m-now-info small {
+		margin-left: 0px;
+		font-size: 14px;
+		line-height: 20px;
+		height: 20px;
+		margin-top: 20px;
+	}
+	.grid-music-container .m-now-controls {
+		padding-top: 0px;
+	}
+	.grid-music-container .m-now-controls .u-process {
+		width: 60%;
+	}
+	.grid-music-container .m-now-controls .u-time {
+		margin-left: 5px;
+	}
+	.grid-music-container .m-now-controls .u-volume {
+		margin-left: 5px;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="navtop navbar-fixed-top"><a href="2-album.html" class="back">&lt;返回</a><span>音乐播放<span></header>
+	<div id="content" style="padding-top: 10px;">
+		<div class="grid-music-container f-usn">
+		    <div class="m-music-play-wrap">
+		        <div class="u-cover"></div>
+		        <div class="m-now-info">
+		            <p class="u-music-title"><strong>标题</strong><br/><small>歌手</small></p>
+		            <div class="m-now-controls">
+		                <div class="u-control u-process">
+		                    <span class="buffer-process"></span>
+		                    <span class="current-process"></span>
+		                </div>
+		                <div class="u-control u-time">00:00/00:00</div>
+		                <div class="u-control u-volume">
+		                    <div class="volume-process" data-volume="0.50">
+		                        <span class="volume-current"></span>
+		                        <span class="volume-bar"></span>
+		                        <span class="volume-event"></span>
+		                    </div>
+		                    <a class="volume-control"></a>
+		                </div>
+		            </div>
+		            <div class="m-play-controls" style="text-align: center">
+		                <a class="u-play-btn prev" title="上一曲"></a>
+		                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+		                <a class="u-play-btn next" title="下一曲"></a>
+		                <!-- 
+		                <a class="u-play-btn mode mode-list current" title="列表循环"></a>
+		                <a class="u-play-btn mode mode-random" title="随机播放"></a>
+		                <a class="u-play-btn mode mode-single" title="单曲循环"></a>
+		                 -->
+		            </div>
+		        </div>
+		    </div>
+		    <div class="f-cb">&nbsp;</div>
+		    <div class="m-music-list-wrap" style="display: none;"></div>
+		    <div class="m-music-lyric-wrap" style="display: none;">
+		        <div class="inner">
+		            <ul class="js-music-lyric-content">
+		                <li class="eof">暂无歌词...</li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<footer class="navbottom navbar-fixed-bottom">
+		<div class="weui-tabbar">
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_button.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">拜佛</p>
+			</a> 
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_msg.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">修行</p>
+			</a>
+			<a href="2-album-list.html" class="weui-tabbar__item weui-bar__item--on">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_article.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">佛音</p>
+			</a> 
+			<a href="1-personal.html" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_cell.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">我的</p>
+			</a>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+	<script src="js/music/musicList.js"></script>
+	<script src="js/music/smusic.js"></script>
+	<script>
+	    new SMusic({
+	        musicList : musicList,
+	        autoPlay  : true,  //是否自动播放
+	        defaultMode : 1,   //默认播放模式，随机
+	        callback   : function (obj) {  //返回当前播放歌曲信息
+	            console.log(obj);
+	        }
+	    });
+	</script>
+</body>
+</html>

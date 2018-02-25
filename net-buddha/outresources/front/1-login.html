@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>登录</title>
+	<link rel="stylesheet" href="plugins/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+	body {
+		background-color: #fff;
+	}
+	.logo-header {
+		clear: both;
+		padding-top: 20px;
+		text-align: center;
+	}
+	.logo-header img {
+		width: 100px;
+	}
+	.login-form {
+		padding: 20px;
+		padding-top: 10px;
+		text-align: center;
+	}
+	.login-username, .login-password {
+		margin: auto;
+		width: 200px;
+		border-bottom: 0.1em solid #272636;
+		margin-bottom: 10px;
+		padding-bottom: 3px;
+	}
+	.login-username img, .login-password img {
+		margin-right: 10px;
+	}
+	.login-username input, .login-password input {
+		width: 173px;
+		border: none;
+		font-size: 13px;
+	}
+	.login-btn-container {
+		margin-top: 20px;
+	}
+	.login-btn-container .layui-btn {
+		height: 30px;
+    	line-height: 30px;
+    	font-size: 13px;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="navtop navbar-fixed-top">登录</header>
+	<div id="content">
+		<h4 class="logo-header"><img src="img/logo.png" /></h4>
+		<form class="login-form">
+			<div class="login-username"><img src="img/username.png" width="15px" /><input type="text" placeholder="手机号码" /></div>
+			<div class="login-password"><img src="img/password.png" width="15px" /><input type="password" placeholder="请输入密码" /></div>
+			<div class="login-btn-container">
+				<button class="layui-btn layui-btn-radius">&nbsp;登　录&nbsp;</button>
+				<button class="layui-btn layui-btn-primary layui-btn-radius">&nbsp;注　册&nbsp;</button>
+			</div>
+		</form>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+	<script src="plugins/layui/layui.js" charset="utf-8"></script>
+</body>
+</html>

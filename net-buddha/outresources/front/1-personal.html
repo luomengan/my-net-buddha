@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>个人中心</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+	#person {
+		text-align: center;
+		border-bottom: 1px solid #ddd;
+		background: #fff;
+	}
+	#person #portrait {
+		width: 50px;
+		height: 50px;
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	#person p {
+		margin-bottom: 0px;
+	}
+	#person #info span {
+		margin-right: 15px;
+	}
+	#person #modify-link {
+		margin-bottom: 5px;
+	}
+	#person #modify-link a {
+		text-decoration: none;
+	}
+	
+	#checkin {
+		padding: 7px 10px;
+		border-bottom: 1px solid #ddd;
+		background: #fff;
+		font-size: 13px;
+	}
+	#checkin button {
+		padding-left: 25px;
+		padding-right: 25px;
+		margin-top: 3px;
+	}
+	
+	#merit {
+		padding: 5px;
+		text-align: center;
+		border-bottom: 1px solid #ddd;
+		background: #fff;
+	}
+	
+	#menu .weui-cells {
+		margin-top: -1px;
+	}
+	#menu a {
+		text-decoration: none;
+	}
+	#menu .weui-cell__bd p {
+		margin-bottom: 0px;
+		font-size: 14px;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="navtop navbar-fixed-top">我的</header>
+	<div id="content">
+		<div id="person">
+			<img id="portrait" src="img/portrait.jpg" class="img-circle">
+			<p id="info"><span>张三</span>等级4</p>
+			<p id="modify-link"><a href="1-modify-info.html">编辑个人资料></a></p>
+		</div>
+		<div id="checkin" class="self-row">
+			<div class="col-xs-4">
+				<button class="btn btn-default">签 到</button>
+			</div>
+			<div class="col-xs-8">
+				<span>已连续签到15天</span><br />
+				<span>明天继续签到将获得10功德</span>
+			</div>
+		</div>
+		<div id="merit" class="self-row">
+			<div class="col-xs-6">
+				<a class="nodesc" href="1-merit-retrive-record.html">
+					<span>功德余额</span><br/>
+					<span>1520</span>
+				</a>
+			</div>
+			<div class="col-xs-6">
+				<a class="nodesc" href="1-merit-consume-record.html">
+					<span>累计消耗功德</span><br/>
+					<span>3650</span>
+				</a>
+			</div>
+		</div>
+		<div id="menu">
+			<div class="weui-cells">
+				<a class="weui-cell weui-cell_access" href="1-recharge.html">
+					<div class="weui-cell__bd">
+						<p>功德充值</p>
+					</div>
+					<div class="weui-cell__ft"></div>
+				</a>
+				<!--
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__bd">
+						<p>我的拜佛记录</p>
+					</div>
+					<div class="weui-cell__ft"></div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__bd">
+						<p>我的修行记录</p>
+					</div>
+					<div class="weui-cell__ft"></div>
+				</a>
+				-->
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__bd">
+						<p>我的收藏</p>
+					</div>
+					<div class="weui-cell__ft"></div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__bd">
+						<p>分享给好友</p>
+					</div>
+					<div class="weui-cell__ft"></div>
+				</a>
+				<a class="weui-cell weui-cell_access" href="javascript:;">
+					<div class="weui-cell__bd">
+						<p>设置</p>
+					</div>
+					<div class="weui-cell__ft"></div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<footer class="navbottom navbar-fixed-bottom">
+		<div class="weui-tabbar">
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_button.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">拜佛</p>
+			</a> 
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_msg.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">修行</p>
+			</a> 
+			<a href="2-album-list.html" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_article.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">佛音</p>
+			</a> 
+			<a href="1-personal.html" class="weui-tabbar__item weui-bar__item--on">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_cell.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">我的</p>
+			</a>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+</body>
+</html>

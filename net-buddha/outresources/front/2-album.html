@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>佛音专辑详情</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/weui.min.css">
+	<link rel="stylesheet" href="plugins/jquery-weui/css/jquery-weui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	<style>
+	.album-summary {
+		padding: 10px;
+		height: 120px;
+		padding-bottom: 10px;
+	}
+	.cover-box {
+		float: left;
+		height: 100px;
+	}
+	.favorite-count {
+		position: relative;
+		top: -18px;
+		z-index: 1;
+		background-color: rgba(150,150,150,0.4);
+		color: #eee;
+		font-size:11px;
+		line-height: 18px;
+		height: 18px;
+		padding-left: 5px;
+		width: 72px;
+		
+	}
+	.sta-box {
+		float: left;
+		margin-left: 10px;
+	}
+	.album-title {
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	.album-author {
+		font-size: 12px;
+		margin-bottom: 0px;
+		line-height: 15px;
+	}
+	.album-catalog {
+		font-size: 12px;
+		margin-bottom: 0px;
+		line-height: 15px;
+	}
+	.album-play-tims {
+		font-size: 12px;
+		margin-bottom: 0px;
+		line-height: 15px;
+	}
+	.album-favorite {
+		font-size: 12px;
+		border: 1px solid #dbdbdb;
+		padding-left: 7px;
+		width: 57px;
+		line-height: 19px;
+		margin-top: 6px;
+		margin-bottom: 0px;
+		border-radius:2px;
+	}
+	.rating-box {
+		float: left;
+		margin-left: 10px;
+	}
+	/* 专辑描述 */
+	.album-desc {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.section-label {
+		padding-bottom: 2px;
+		border-bottom: 2px solid #bbb;
+	}
+	.album-desc-detail {
+		font-size: 12px;
+	}
+	/* 专辑歌曲 */
+	.album-music {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.album-music-list {
+		list-style: none;
+	}
+	.album-music-list li {
+		font-size: 12px;
+		height: 25px;
+		line-height: 25px;
+	} 
+	.album-music-list li a {
+		text-decoration: none;
+	}
+	.album-music-list li .right {
+		float: right;
+	}
+	</style>
+    <!--[if lt IE 9]>
+	<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<header class="navtop navbar-fixed-top"><a href="2-album-list.html" class="back">&lt;返回</a><span>佛音专辑详情<span></header>
+	<div id="content">
+		<div class="album-summary">
+			<div class="cover-box">
+				<img src="img/album.jpg" width="100px;" />
+				<div class="favorite-count">已有9人收藏</div>
+			</div>
+			<div class="sta-box">
+				<p class="album-title">根宋佛教音乐</p>
+				<p class="album-author">演唱者 : 根宋</p>
+				<p class="album-catalog">分　类 : 清音</p>
+				<p class="album-play-tims">播放数 : 256次</p>
+				<p class="album-favorite"><img src="img/favorite.jpg" /> 收藏</p>
+			</div>
+			<div class="rating-box"></div>
+		</div>
+		<div class="album-desc clearboth">
+			<p class="marginb5"><span class="section-label">专辑介绍</span></p>
+			<p class="album-desc-detail">这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍，这是专辑的介绍。</p>
+		</div>
+		<div class="album-music">
+			<p class="marginb5"><span class="section-label">歌曲（10首）</span></p>
+			<ul class="album-music-list">
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+				<li><a href="2-music.html">阿弥陀佛心咒<span class="right">时长 05:23</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<footer class="navbottom navbar-fixed-bottom">
+		<div class="weui-tabbar">
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_button.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">拜佛</p>
+			</a> 
+			<a href="javascript:;" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_msg.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">修行</p>
+			</a>
+			<a href="2-album-list.html" class="weui-tabbar__item weui-bar__item--on">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_article.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">佛音</p>
+			</a> 
+			<a href="1-personal.html" class="weui-tabbar__item">
+				<div class="weui-tabbar__icon">
+					<img src="img/icon_nav_cell.png" alt="">
+				</div>
+				<p class="weui-tabbar__label">我的</p>
+			</a>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/jquery-weui/jquery-weui.min.js"></script>
+</body>
+</html>

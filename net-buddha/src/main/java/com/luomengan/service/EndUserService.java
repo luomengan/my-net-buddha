@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.luomengan.dao.EndUserDao;
+import com.luomengan.dao.UserMeritFlowDao;
 import com.luomengan.dao.UserMeritWalletDao;
 import com.luomengan.entity.EndUser;
 import com.luomengan.entity.UserMeritWallet;
@@ -38,6 +39,9 @@ public class EndUserService {
 
 	@Autowired
 	private UserMeritWalletDao userMeritWalletDao;
+	
+	@Autowired
+	private UserMeritFlowDao userMeritFlowDao;
 
 	@Value("${custom.outer.resources}")
 	private String outerResources;
@@ -132,7 +136,7 @@ public class EndUserService {
 	}
 
 	public Integer getUserConsumeMerit(Integer userId) {
-		return 0;
+		return userMeritFlowDao.retriveUserConsumeMerit(userId);
 	}
 
 	public EndUser register(String phone, String password) {
